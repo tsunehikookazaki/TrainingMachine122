@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/machineListFragment">
+
+    <fragment
+        android:id="@+id/machineListFragment"
+        android:name="net.the_okazakis.trainingmachin.MachineListFragment"
+        android:label="マシン一覧"
+        tools:layout="@layout/fragment_machine_list">
+        <action
+            android:id="@+id/action_machineListFragment_to_machineDetailFragment"
+            app:destination="@id/machineDetailFragment" />
+        <action
+            android:id="@+id/action_machineListFragment_to_noteListFragment"
+            app:destination="@id/noteListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/machineDetailFragment"
+        android:name="net.the_okazakis.trainingmachin.MachineDetailFragment"
+        android:label="マシン詳細"
+        tools:layout="@layout/fragment_machine_detail">
+        <argument
+            android:name="machineId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteListFragment"
+        android:name="net.the_okazakis.trainingmachin.NoteListFragment"
+        android:label="自由メモ"
+        tools:layout="@layout/fragment_note_list" />
+</navigation>
